@@ -1,0 +1,523 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtxswv8jl2x13"]
+
+[ext_resource type="Script" path="res://scripts/application/BotSelectionMenu.cs" id="1_jefxg"]
+[ext_resource type="FontFile" uid="uid://b2cydqvo03nf3" path="res://graphics/Font/retro-pixel-cute-mono.ttf" id="3_4imav"]
+[ext_resource type="Theme" uid="uid://5yoywqg65n2c" path="res://graphics/ui themes/bot-select-button.tres" id="3_sl6y8"]
+[ext_resource type="Theme" uid="uid://cqtc1vcpuw3ao" path="res://graphics/ui themes/menu-button.tres" id="4_j5yrv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bot Selection Controller" type="Node" parent="." node_paths=PackedStringArray("buttonGridHolder", "botInfoLabel", "resolution_720", "resolution_1080", "resolution_1440", "toggleFullscreen", "quitButton", "vidButton", "creditsButton", "selectionMenuHolder", "creditsMenuHolder")]
+script = ExtResource("1_jefxg")
+buttonGridHolder = NodePath("../Selection Menu/Bot Tiers")
+botInfoLabel = NodePath("../Selection Menu/Bot info")
+colBotName = Color(0.203922, 0.886275, 0.556863, 1)
+colAuthorName = Color(1, 0.282353, 0.478431, 1)
+colDescription = Color(0.917647, 0.917647, 0.917647, 1)
+colRating = Color(0.266667, 0.603922, 0.741176, 1)
+specials = PackedStringArray("é", "King Gᴀᴍʙᴏᴛ Ⅳ")
+wonCol = Color(0.156863, 0.458824, 0.313726, 1)
+wonHoverCol = Color(0.270588, 0.737255, 0.513726, 1)
+drawCol = Color(0.219608, 0.545098, 0.729412, 1)
+drawHoverCol = Color(0.270588, 0.611765, 0.807843, 1)
+resolution_720 = NodePath("../Botttom bar/Bottom buttons/1280")
+resolution_1080 = NodePath("../Botttom bar/Bottom buttons/1920")
+resolution_1440 = NodePath("../Botttom bar/Bottom buttons/2560")
+toggleFullscreen = NodePath("../Botttom bar/Bottom buttons/Fullscreen")
+quitButton = NodePath("../Botttom bar/Bottom buttons/Quit")
+vidButton = NodePath("../Botttom bar/Bottom buttons/Video")
+creditsButton = NodePath("../Botttom bar/Bottom buttons/Credits")
+selectionMenuHolder = NodePath("../Selection Menu")
+creditsMenuHolder = NodePath("../About Menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0235294, 0.0509804, 0.105882, 1)
+
+[node name="Botttom bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 681.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.141176, 0.203922, 1)
+
+[node name="Bottom buttons" type="HBoxContainer" parent="Botttom bar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1066.0
+offset_bottom = 36.0
+
+[node name="Credits" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(119.52, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+toggle_mode = true
+text = "ABOUT"
+
+[node name="Video" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(157.18, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "VIDEO (YT)"
+
+[node name="1280" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(157.18, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "1280 x 720"
+
+[node name="1920" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(157.18, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "1920 x 1080"
+
+[node name="2560" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(157.18, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "2560 x 1440"
+
+[node name="Fullscreen" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(157.18, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "FULLSCREEN"
+
+[node name="Quit" type="Button" parent="Botttom bar/Bottom buttons"]
+custom_minimum_size = Vector2(97.67, 5)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_j5yrv")
+text = "QUIT"
+
+[node name="Version" type="Label" parent="Botttom bar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1128.0
+offset_top = 2.0
+offset_right = -8.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.513726, 0.54902, 0.631373, 1)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "V.0.1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = -10.0
+offset_right = 1.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.929412, 0.517647, 1)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 95
+text = "Tiny Chess Bot Challenge"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Selection Menu" type="Node2D" parent="."]
+
+[node name="Subtitle" type="Label" parent="Selection Menu"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 61.0
+offset_right = 1280.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.243137, 0.666667, 0.462745, 1)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "A selection of tiny bots, each written in < 1024 tokens of code. How many can you defeat?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bot Tiers" type="VBoxContainer" parent="Selection Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 170.0
+offset_right = 1278.0
+offset_bottom = 683.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="Tier 2" type="HBoxContainer" parent="Selection Menu/Bot Tiers"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Button2" type="Button" parent="Selection Menu/Bot Tiers/Tier 2"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 2/Button2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Selection Menu/Bot Tiers/Tier 2"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 2/Button3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="Selection Menu/Bot Tiers/Tier 2"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 2/Button4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tier 3" type="HBoxContainer" parent="Selection Menu/Bot Tiers"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Button2" type="Button" parent="Selection Menu/Bot Tiers/Tier 3"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 3/Button2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Selection Menu/Bot Tiers/Tier 3"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 3/Button3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="Selection Menu/Bot Tiers/Tier 3"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 3/Button4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tier 4" type="HBoxContainer" parent="Selection Menu/Bot Tiers"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Button2" type="Button" parent="Selection Menu/Bot Tiers/Tier 4"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 4/Button2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Selection Menu/Bot Tiers/Tier 4"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 4/Button3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="Selection Menu/Bot Tiers/Tier 4"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 4/Button4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tier 5" type="HBoxContainer" parent="Selection Menu/Bot Tiers"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Button2" type="Button" parent="Selection Menu/Bot Tiers/Tier 5"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 5/Button2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Selection Menu/Bot Tiers/Tier 5"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 5/Button3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="Selection Menu/Bot Tiers/Tier 5"]
+custom_minimum_size = Vector2(390.91, 9.085)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_sl6y8")
+text = "Bot Name"
+
+[node name="Score" type="Label" parent="Selection Menu/Bot Tiers/Tier 5/Button4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = -8.45999
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.305882)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 24
+text = "Wins: 0  Draws: 0  Losses: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bot info" type="RichTextLabel" parent="Selection Menu"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 555.0
+offset_right = 1257.0
+offset_bottom = 676.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(500, 0)
+theme_override_fonts/normal_font = ExtResource("3_4imav")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][color=red]Bot info"
+
+[node name="About Menu" type="Node2D" parent="."]
+visible = false
+position = Vector2(33, 160)
+
+[node name="About" type="Label" parent="About Menu"]
+offset_left = -4.0
+offset_top = -54.0
+offset_right = 1222.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 22
+text = "Starting in July 2023, I ran a friendly contest for programmers around the world to try to code their own chess bots. All they had to begin with was as a simple framework that handled basic operations such as generating legal moves and updating the state of the board. The rest was up to them!
+
+As an extra challenge, the size of the bots was limited to just 1024 'tokens' of code. For example, the line 'int rookValue = 500' would count as 4 tokens: the variable type (integer), its name (rookValue), the assignment operator (=) and the numeric value (500).
+
+This challenge ran for a little over 2 months, and by the end there were over 600 unique bots submitted. This is a selection of just a few of the many fantastic entries, covering a vast skill range from around 200 ELO all the way up to super grandmaster level. Good luck defeating them!"
+autowrap_mode = 3
+
+[node name="Credits2" type="Label" parent="About Menu"]
+offset_top = 334.0
+offset_right = 1220.0
+offset_bottom = 912.0
+theme_override_colors/font_color = Color(0.396078, 0.411765, 0.454902, 1)
+theme_override_fonts/font = ExtResource("3_4imav")
+theme_override_font_sizes/font_size = 22
+text = "Created by: Sebastian Lague
+Bots by: various authors (hover over bot name to see).
+Rating calculations by: Gediminas Masaitas
+Font: github.com/TakWolf/retro-pixel-font
+Sfx: github.com/lichess-org/lila/tree/master/public/sound"
+autowrap_mode = 3

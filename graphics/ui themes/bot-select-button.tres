@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://5yoywqg65n2c"]
+
+[ext_resource type="FontFile" uid="uid://b2cydqvo03nf3" path="res://graphics/Font/retro-pixel-cute-mono.ttf" id="1_v1kh8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbovj"]
+bg_color = Color(0.694118, 0.207843, 0.337255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6uy0"]
+bg_color = Color(0.505882, 0.133333, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juexx"]
+bg_color = Color(0.690196, 0.239216, 0.380392, 1)
+
+[resource]
+Button/colors/font_color = Color(0.929412, 0.929412, 0.929412, 1)
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_v1kh8")
+Button/styles/hover = SubResource("StyleBoxFlat_rbovj")
+Button/styles/normal = SubResource("StyleBoxFlat_w6uy0")
+Button/styles/pressed = SubResource("StyleBoxFlat_juexx")
